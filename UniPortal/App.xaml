@@ -1,0 +1,70 @@
+﻿<Application x:Class="UniPortal.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UniPortal"
+             StartupUri=  "Login.xaml">
+    <!--\student\studentform-->
+    <!--Login-->
+    <!--\Admins\AdminsForm.xaml-->
+    <!--\Teachers\TeacherForm-->
+    <Application.Resources>
+        <LinearGradientBrush x:Key="MyGradientBrush1" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FFEEC13D" Offset="0" />
+            <GradientStop Color="#FFFB315E" Offset="1" />
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="MyGradientBrush2" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FF33C98F" Offset="0" />
+            <GradientStop Color="#FF029FB4" Offset="1" />
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="MyGradientBrush3" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FF02AFC3" Offset="0" />
+            <GradientStop Color="#FFB108E6" Offset="1" />
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="MyGradientBrush4" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FF01BACA" Offset="0" />
+            <GradientStop Color="#FF009DD6" Offset="1" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="MyGradientBrush5" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="Yellow" Offset="0" />
+            <GradientStop Color="Orange" Offset="1" />
+        </LinearGradientBrush>
+        
+        <!--Drop Shadow Effects-->
+        <Style x:Key="DropShadowEffectStyle1" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FFFFAE00" BlurRadius="10" ShadowDepth="1" Opacity="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DropShadowEffectStyle2" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FF00D8FF" BlurRadius="10" ShadowDepth="1" Opacity="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DropShadowEffectStyle3" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FFA300FF" BlurRadius="10" ShadowDepth="1" Opacity="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DropShadowEffectStyle4" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Cyan" BlurRadius="10" ShadowDepth="1" Opacity="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DropShadowEffectStyle5" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FFFFCD00" BlurRadius="10" ShadowDepth="1" Opacity="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>

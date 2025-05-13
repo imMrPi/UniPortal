@@ -1,0 +1,133 @@
+﻿<Window x:Class="UniPortal.Teachers.TeacherForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniPortal.Teachers"
+        mc:Ignorable="d"
+       Title="Teacher Form" Height="650" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\student\styles.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="White"  Panel.ZIndex="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="StudentForm1" Width="920"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Right StackPanel For Menu-->
+        <!--Menu Grid-->
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="#FF090A1D">
+            <Border HorizontalAlignment="Stretch" Height="50"/>
+
+
+            <!--DashBoard-->
+            <Button x:Name="DashBoardMenu" Click="DashBoardMenu_Click" Height="30"  FontSize="15" Content="داشبورد"
+                    Foreground="White"  Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="1" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+            <StackPanel x:Name="DashBoardMenuPanel" Visibility="Collapsed" Height="30" HorizontalAlignment="Stretch">
+                <Button x:Name="DashBoardBTN" Click="DashBoardBTN_Click" HorizontalAlignment="Stretch" Height="30" Content="داشبورد " FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D"  FontFamily="B Nazanin" />
+            </StackPanel>
+
+
+            <!--SelectUnit-->
+            <Button x:Name="SelectUnitMenu" Click="SelectUnitMenu_Click" Height="30"  FontSize="15" Content="استادان"
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+            <!--Search Student-->
+            <Button x:Name="SearchStudnt" Click="SearchStudnt_Click" Height="30"  FontSize="15" Content="جستجوی داشنجو"
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+
+
+
+            <!--Schedule-->
+            <Button x:Name="ScheduleMenu" Click="ScheduleMenu_Click" Height="30"  FontSize="15" Content="گزارش ها"
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+
+            <StackPanel x:Name="ScheduleMenuPanel" Visibility="Collapsed" Height="90" HorizontalAlignment="Stretch">
+                <Button HorizontalAlignment="Stretch" Height="30" Content="برنامه هفتگی" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+                <Button HorizontalAlignment="Stretch" Height="30" Content="نظرسنجی" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+                <Button HorizontalAlignment="Stretch" Height="30" Content="نمرات کلاسی" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+               
+            </StackPanel>
+
+            <!-- reports-->
+            <Button x:Name="reportsMenu" Click="reportsMenu_Click" Height="30"  FontSize="15" Content="پروپزال"
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+
+         
+            <!--requests-->
+            <Button x:Name="requestsMenu"  Click="requestsMenu_Click" Height="30"  FontSize="15" Content="گزارش پروپزال "
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+
+            <StackPanel x:Name="requestsMenuPanel" Visibility="Collapsed" Height="30" HorizontalAlignment="Stretch">
+                <Button HorizontalAlignment="Stretch" Height="30" Content="ثبت درخواست" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+
+            </StackPanel>
+
+            <!--financial department-->
+            <Button x:Name="financialdepartmentMenu" Click="financialdepartmentMenu_Click"  Height="30"  FontSize="15" Content="ارزشیابی"
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin"  Style="{StaticResource MainMenuLabelsStyle}"/>
+            <Border   HorizontalAlignment="Stretch" Height="2" BorderThickness="1"  BorderBrush="Black" Visibility="Visible">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+            </Border>
+            <StackPanel x:Name="financialdepartmentMenuPanel" Visibility="Collapsed" Height="120" HorizontalAlignment="Stretch">
+                <Button HorizontalAlignment="Stretch" Height="30" Content="ثبت فیش" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+                <Button HorizontalAlignment="Stretch" Height="30" Content="پرداخت آنلاین شهریه" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+                <Button HorizontalAlignment="Stretch" Height="30" Content="کارنامه نیمسال مالی" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+                <Button HorizontalAlignment="Stretch" Height="30" Content="کارنامه کل مالی" FontSize="15"  Style="{StaticResource NoHoverButtonStyle}" 
+                    Foreground="White" Background="#FF090A1D" FontFamily="B Nazanin" />
+
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Column="0" Panel.ZIndex="0">
+            <ContentControl Panel.ZIndex="0" x:Name="MainContent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        </Grid>
+    </Grid>
+
+</Window>

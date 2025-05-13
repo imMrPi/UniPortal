@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="UniPortal.Admins.UserControlsMenu.SetUnits"
+             xmlns:shapes="clr-namespace:UniPortal.Student.UserControlsMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniPortal.Admins.UserControlsMenu"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="920">
+    <DockPanel Width="920">
+        <!-- Top Menu -->
+        <Border DockPanel.Dock="Top" x:Name="SignUpBorder" BorderThickness="1" Visibility="Visible">
+            <Border.Effect>
+                <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+            </Border.Effect>
+            <Border Background="#FF090A1D" BorderThickness="0" Visibility="Visible" Panel.ZIndex="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="600"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Menu Grid.Column="0" Background="#FF090A1D" Foreground="White" FontSize="18">
+                        <MenuItem Header="Save" Click="Save_Click"/>
+                        <MenuItem Header="Load" Click="Load_Click"/>
+                        <MenuItem Header="Edit"/>
+                        <MenuItem Header="View"/>
+                        <MenuItem Header="Tools"/>
+                        <MenuItem Header="Connetions" Click="ConnectionsButton_Click"/>
+                        <MenuItem Header="Reset" Click="Reset_Click"/>
+                        <MenuItem Header="Undo" Click="Undo_Click"/>
+                        <MenuItem Header="Redo" Click="Redo_Click"/>
+                    </Menu>
+
+                    <CheckBox Name="DrawingGridCheckBox" Foreground="White" FontSize="18" Margin="10 40 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Height="30" Checked="DrawingGridCheckBox_Checked" Unchecked="DrawingGridCheckBox_Unchecked">
+                        <TextBlock Text="Grid" VerticalAlignment="Center" Margin="2 -4 0 0"/>
+                    </CheckBox>
+
+
+                </Grid>
+            </Border>
+        </Border>
+
+        <!-- Bottom Menu -->
+        <Border DockPanel.Dock="Bottom" Panel.ZIndex="4"  BorderThickness="2" Background="#FF090A1D" BorderBrush="#FF090A1D" Visibility="Visible" HorizontalAlignment="Center">
+            <Canvas Width="1000" Height="60"  Background="#FF090A1D" >
+                <Canvas.RenderTransform>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7" CenterX="0" CenterY="0"/>
+                </Canvas.RenderTransform>
+                <Border  x:Name="CreateTrianglBasiCourse" Canvas.Left="300" Panel.ZIndex="1" MouseDown="CreateTriangleBasicCourse_MouseDown" Style="{StaticResource DropShadowEffectStyle2}">
+                    <shapes:CustomPolygon Points="40,0 0,69.28 80,69.28" GradientBrush="{StaticResource MyGradientBrush4}" Text="اختیاری" FontSize="13" TextWidth="50" TextMargin="0,15,0,0" Foreground="Black" Panel.ZIndex="2"/>
+                </Border>
+                <Border x:Name="CreateRectangle" Canvas.Left="400" Panel.ZIndex="1" MouseDown="CreateRectangle_MouseDown" Style="{StaticResource DropShadowEffectStyle2}">
+                    <shapes:CustomPolygon Points="10,10 110,10 110,60 10,60" GradientBrush="{StaticResource MyGradientBrush4}" Text="پایه" Foreground="Black" TextMargin="10,10,0,0" FontSize="15" Panel.ZIndex="2"/>
+                </Border>
+                <Border x:Name="CreateCircle" Canvas.Left="550" Panel.ZIndex="1" MouseDown="CreateCircle_MouseDown" Style="{StaticResource DropShadowEffectStyle4}">
+                    <shapes:CustomCircle GradientBrushCircle="{StaticResource MyGradientBrush2}" TextCircle="کارگاه آزمایشگاه" FontSizeCircle="12" TextWidthCircle="80" TextMarginCircle="5,0,0,0" Panel.ZIndex="2"/>
+                </Border>
+                <Border x:Name="CreateCirclegeneralCourse" Canvas.Left="650" Panel.ZIndex="1" MouseDown="CreatGeneralCourseCircle_MouseDown" Style="{StaticResource DropShadowEffectStyle1}">
+                    <shapes:CustomCircle GradientBrushCircle="{StaticResource MyGradientBrush1}" TextCircle="عمومی ها کارگاه" FontSizeCircle="12" TextWidthCircle="80" TextMarginCircle="5,0,0,0" Panel.ZIndex="2"/>
+                </Border>
+                <Border x:Name="CreateTriangle" Canvas.Left="750" Panel.ZIndex="1" MouseDown="CreateTriangle_MouseDown" Style="{StaticResource DropShadowEffectStyle3}">
+                    <shapes:CustomPolygon Points="40,0 0,69.28 80,69.28" GradientBrush="{StaticResource MyGradientBrush3}" Text="تخصصی" FontSize="13" TextWidth="50" TextMargin="0,15,0,0" Foreground="White" Panel.ZIndex="2"/>
+                </Border>
+
+            </Canvas>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Grid>
+        <Canvas Name="GridCanvas" Background="White" Panel.ZIndex="0" DockPanel.Dock="Top"/>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"
+                      PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" DockPanel.Dock="Bottom">
+            <Canvas Name="drawingCanvas" Background="Transparent" Width="2000" Height="1000"
+                   MouseLeftButtonDown="Canvas_MouseLeftButtonDown">
+                <Canvas.RenderTransform>
+                    <ScaleTransform x:Name="ContentScaleTransform" ScaleX="0.5" ScaleY="0.5" CenterX="0" CenterY="0"/>
+                </Canvas.RenderTransform>
+            </Canvas>
+        </ScrollViewer>
+        </Grid>
+    </DockPanel>
+</UserControl>

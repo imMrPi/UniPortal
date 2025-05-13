@@ -1,0 +1,548 @@
+﻿<Window x:Class="UniPortal.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniPortal"
+        mc:Ignorable="d"
+        
+           Title="MainWindow" Height="600" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontFamily="Arial Rounded MT Bold">
+    <Window.Resources>
+
+        <Style x:Key="NoHoverButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Right"
+                                          VerticalAlignment="Center"
+                                          Content="{TemplateBinding Content}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray"/>
+                                <Setter Property="BorderBrush" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="MainGrid" Background="#FF090A1D">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="Column1" Width="*"/>
+            <ColumnDefinition x:Name="Column2" Width="1"/>
+            <ColumnDefinition x:Name="Column3" Width="9*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="documnetsGrid" Visibility="Visible" Grid.Column="0" Margin="0 0 10 0" Panel.ZIndex="3">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="documnetsGridCol1" Height="30"/>
+                <RowDefinition x:Name="documnetsGridCol2" Height="60"/>
+                <RowDefinition x:Name="documnetsGridCol3" Height="1"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Panel.ZIndex="3" Grid.Row="0" Grid.Column="1" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button x:Name="HambergerMenu" Click="HambergerMenu_Click" Style="{StaticResource NoHoverButtonStyle}" Background="Transparent" BorderThickness="0" Grid.Row="0" Width="30" Height="30"  HorizontalAlignment="Left" Margin="5 5 0 5">
+                    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="30" Height="30" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="border1" Grid.Row="0"  Background="White" Width="25" Height="2" Panel.ZIndex="2" CornerRadius="1.5"/>
+                        <Border x:Name="border2" Grid.Row="1"  Background="White" Width="25" Height="2" Panel.ZIndex="2" CornerRadius="1.5"/>
+                        <Border x:Name="border3" Grid.Row="2"  Background="White" Width="25" Height="2" Panel.ZIndex="2" CornerRadius="1.5"/>
+
+                    </Grid>
+                </Button>
+            </StackPanel>
+            <Button x:Name="Topic" Visibility="Collapsed" Click="Topic_Click" HorizontalAlignment="Right" Width="300"  Grid.Row="1" Background="Transparent"  Style="{StaticResource NoHoverButtonStyle}" BorderThickness="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="اطلاعیه ها" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <Image Grid.Column="1" Width="30" Height="30" Source="/Icons/newspaper.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
+
+                </Grid>
+            </Button>
+            <StackPanel Grid.Row="2" Visibility="Visible">
+                <Grid x:Name="subNotifesGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Button x:Name="NotifGeneral" Click="NotifGeneral_Click" HorizontalAlignment="Right" Width="300"  Grid.Row="0" Background="Transparent"  Style="{StaticResource NoHoverButtonStyle}" BorderThickness="0">
+                        <Label  Content="اطلاعیه های عمومی" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Button>
+                    <Grid Grid.Row="1" Visibility="Visible">
+                        <FlowDocumentScrollViewer IsToolBarVisible="False" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Zoom="120">
+                            <FlowDocument IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
+                                <Paragraph Foreground="white" FontSize="10" FlowDirection="RightToLeft">
+                                    - دانشجویان مقطع کارشناسی ورودی 97 و ارشد ورودی 99 در صورت عدم فراغت از تحصیل، سریعا نسبت به پیگیری و اخذ مجوز سنوات ارفاقی نظام وظیفه برای ترم 14021 ابتدا به سامانه سخا و سپس به کارشناس نظام وظیفه دانشگاه مراجعه نمایند
+
+- به اطلاع دانشجویانی که جهت افزایش سنوات و بازگشت به تحصیل از طریق کمیسیون موارد خاص موافقت شده است از بابت نظام وظیفه و ثبت حکم به آقای بهبودنیا و پرداخت شهریه به خانم علیزاده در قسمت مالی دانشگاه اقدام فرمایید.
+
+- دانشجویان محترم بعد از ورود به سیستم آموزشی سماوب، در صورت بروز هرگونه مشکل در انتخاب واحد با کارشناس رشته خود تماس حاصل فرمایند. شماره کارشناسان در اطلاعیه دانشجویان قابل رویت می باشد.
+
+- به اطلاع دانشجویان محترم کارشناسی می رساند تعداد دروس قابل حذف و اخذ در بازه حذف و اضافه، فقط 2درس اخذ و 2 درس اضافه مقدور می باشد.
+
+- دانشجویان محترم جهت اخذ مرخصی یا حذف ترم با احتساب در سنوات از طریق مدیریت درخواست و جهت اخذ مرخصی یا حذف ترم بدون احتساب در سنوات از طریق سامانه سجاد، کمیسیون موارد خاص اقدام فرمایید.
+
+- به اطلاع دانشجویان کارشناسی که سه بار مشروط بار اول شده اند می رساند، جهت درخواست بازگشت به تحصیل از طریق سامانه سجاد کمیسیون موارد خاص اقدام فرمایید.
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    </Grid>
+
+                    <Button x:Name="NotifStudent" Click="NotifStudent_Click" HorizontalAlignment="Right" Width="300"  Grid.Row="2" Background="Transparent"  Style="{StaticResource NoHoverButtonStyle}" BorderThickness="0">
+                        <Label Grid.Column="0" Content="اطلاعیه های دانشجو" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Button>
+                    <Grid Grid.Row="3" Visibility="Visible">
+                        <FlowDocumentScrollViewer IsToolBarVisible="False" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Zoom="120">
+                            <FlowDocument IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
+                                <Paragraph Foreground="white" FontSize="10" FlowDirection="RightToLeft">
+                                    - دانشجویان محترم بعد از ورود به سیستم آموزشی سما، در صورت بروز هرگونه مشکل در انتخاب واحد  با کارشناس رشته خود تماس حاصل فرمایند.
+
+دانشکده فناوریهای صنعتی: خانم فرجاد کارشناس رشته مهندسی برق و کامپیوتر با شماره 31980515 و خانم رشیدی کارشناس رشته مهندسی صنایع و اپتیک لیزر با شماره 31980514
+
+دانشکده انرژی های تجدیدپذیر :  خانم موسی خانی کارشناس رشته مهندسی شیمی و شیمی کاربردی با شماره 31980517  و خانم جوادی کارشناس رشته مهندسی مکانیک و ساخت و تولید و هوافضا با شماره 31980518
+
+دانشکده محیط زیست: خانم تقوی کارشناس رشته مهندسی مواد و معدن و ریاضی با شماره 31980519 و خانم موسوی نیا کارشناس رشته مهندسی عمران و نساجی و فیزیک با شماره 31980520
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    </Grid>
+
+
+
+
+                    <Button x:Name="NotifTeacher" Click="NotifTeacher_Click" HorizontalAlignment="Right" Width="300"  Grid.Row="4" Background="Transparent"  Style="{StaticResource NoHoverButtonStyle}" BorderThickness="0">
+                        <Label Grid.Column="0" Content="اطلاعیه های استاد" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Button>
+                    <Grid Grid.Row="5" Visibility="Visible">
+                        <FlowDocumentScrollViewer IsToolBarVisible="False" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Zoom="120">
+                            <FlowDocument IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
+                                <Paragraph Foreground="white" FontSize="10" FlowDirection="RightToLeft">
+                                    Nothing Here!!
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    </Grid>
+                    <Button x:Name="NotifUsers" Click="NotifUsers_Click" HorizontalAlignment="Right" Width="300"  Grid.Row="6" Background="Transparent"  Style="{StaticResource NoHoverButtonStyle}" BorderThickness="0">
+                        <Label Grid.Column="0" Content="اطلاعیه های کاربران" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Button>
+                    <Grid Grid.Row="7" Visibility="Visible">
+                        <FlowDocumentScrollViewer IsToolBarVisible="False" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Zoom="120">
+                            <FlowDocument IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
+                                <Paragraph Foreground="white" FontSize="10" FlowDirection="RightToLeft">
+                                    Nothing Here!!
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    </Grid>
+                    <Button x:Name="NotifNewUsers" Click="NotifNewUsers_Click" HorizontalAlignment="Right" Width="300"  Grid.Row="8" Background="Transparent"  Style="{StaticResource NoHoverButtonStyle}" BorderThickness="0">
+                        <Label Grid.Column="0" Content="اطلاعیه های جدید الورود" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Button>
+                    <Grid Grid.Row="9" Visibility="Visible">
+                        <FlowDocumentScrollViewer IsToolBarVisible="False" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Zoom="120">
+                            <FlowDocument IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
+                                <Paragraph Foreground="white" FontSize="10" FlowDirection="RightToLeft">
+                                    Nothing Here!!
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+
+        <GridSplitter Panel.ZIndex="1" Grid.Column="1" Width="2" HorizontalAlignment="Stretch"/>
+
+        <!-- Border for Login -->
+        <Grid  Grid.Column="2" Margin="5 0 0 0">
+            <Border Grid.Column="2" x:Name="LoginBorder" Width="300" Height="320" BorderThickness="0" Visibility="Visible" Margin="-5 0 0 0" Panel.ZIndex="-1">
+
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+
+                <Border Grid.Column="2" Width="300" Height="320" BorderThickness="0" Visibility="Visible" Margin="-5 0 0 0" Panel.ZIndex="2">
+                    <Border.Background>
+                        <SolidColorBrush Opacity="1" Color="#FF090A1D"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Foreground="white" Text="ورود" FontSize="24" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,10,0,20"/>
+                        <Label Grid.Row="1" Width="200" Height="30" Margin="0 0 10 25" Content="شماره دانشجویی" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold"/>
+                        <Image Grid.Row="1" Width="20" Height="20" Source="/Icons/email.png" Margin="-250 15 0 0" />
+
+                        <TextBox x:Name="Email" Grid.Row="1" Width="200" Height="30" Margin="0,10"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Background="Transparent" BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 15 0 0" Foreground="White"/>
+                        <Label Grid.Row="2" Width="200" Height="30" Margin="0 10 10 25" Content="رمز عبور" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Image Grid.Row="2" Width="20" Height="20" Source="/Icons/hide.png" Margin="-250 15 0 0" />
+
+                        <PasswordBox x:Name="Passwords" Grid.Row="2" Width="200" Height="30" Margin="0,10"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Background="Transparent" BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 15 0 0" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+
+
+
+                        <CheckBox  x:Name="RememberMe" Width="110" Height="20"  Grid.Row="3" Margin="-150 -5 0 100"  Foreground="White" >
+                            <TextBlock Text="مرا به خاطر بسپار" VerticalAlignment="Center" Margin="0 0 0 0"/>
+                        </CheckBox>
+
+                        <Label  x:Name="ForgotPass" MouseDown="ForgotPass_MouseDown" Height="30" Content="رمز عبور را فراموش کردم" Grid.Row="3" Margin="165 0 0 110" Foreground="white"/>
+
+                        <StackPanel  Grid.Row="3" Margin="0 30 0 0">
+                            <Button x:Name="LoginBtn" Click="LoginBtn_Click" Grid.Row="3" Content="ورود" Foreground="Black" Width="100" Height="30"
+        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,-10"
+       >
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF23F4FC" Offset="0"/>
+                                        <GradientStop Color="#FF21E3AD" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="border" Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="15">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                            <Button x:Name="SignUpInLoginPage" Click="SignUpInLoginPage_Click" Grid.Row="3" Content="ثبت نام" Foreground="Black" Width="100" Height="30" Background="white"
+                        HorizontalAlignment="Center" Margin="0,20,0,0">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border  x:Name="border" Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="15">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="DarkGray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                        </StackPanel>
+                        <Button x:Name="Skip" Click="Skip_Click" Content="      Skip &#xD;&#xA; DevMode"
+        Foreground="LightGray" Height="40"
+        Margin="10,9,194,19" Background="Transparent"  Padding="10,5">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="DarkGray"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+
+        <!-- Border for Sign Up -->
+        <Grid  Grid.Column="2" Margin="5 0 0 0">
+            <Border Grid.Column="2"  x:Name="SignUpBorder" Width="300" Height="320" BorderThickness="1" Visibility="Collapsed">
+                <Border.Effect>
+                    <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="0" Opacity="1"/>
+                </Border.Effect>
+                <Border Grid.Column="2" Width="300" Height="320" BorderThickness="0" Visibility="Visible" Margin="-10 -1 0 0" Panel.ZIndex="2">
+                    <Border.Background>
+                        <SolidColorBrush Opacity="1" Color="#FF090A1D"/>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Foreground="white" Text="Sign Up" FontSize="24" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,10,0,20"/>
+                        <Label Grid.Row="1" Width="200" Height="30" Margin="0 0 10 25" Content="شماره موبایل" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold"/>
+                        <Image Grid.Row="1" Width="20" Height="20" Source="/Icons/email.png" Margin="-250 15 0 0" />
+                        <TextBox x:Name="NewEmail" Grid.Row="1" Width="200" Height="30" Margin="0,10"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Background="Transparent" BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 15 0 0" Foreground="White"/>
+                        <Label Grid.Row="2" Width="200" Height="30" Margin="0 10 10 25" Content="کد تایید" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <PasswordBox x:Name="NewPassword" Grid.Row="2" Width="200" Height="30" Margin="0,10"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Background="Transparent" BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 15 0 0" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+                        <Image Grid.Row="2" Width="20" Height="20" Source="/Icons/hide.png" Margin="-250 15 0 0" />
+                        <Button x:Name="SignUpBtn" Click="SignUpBtn_Click" Grid.Row="3" Content="ثبت" Foreground="Black" Width="100" Height="30"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,-10"
+                    >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF00BEC6" Offset="0"/>
+                                    <GradientStop Color="#FF26EDA1" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="LoginInSignUpPage" Click="LoginInSignUpPage_Click"  Grid.Row="3" Content="ورود" Foreground="Black" Width="100" Height="30" Background="white"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,-20">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="border" Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="DarkGray"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Border>
+            </Border>
+        </Grid>
+        <!-- Border for Forgot Password -->
+        <Grid  Grid.Column="2" Margin="5 0 0 0">
+            <Border  Grid.Column="2" x:Name="ForgotPassword" BorderThickness="1" Visibility="Collapsed" Width="300" Height="320" >
+                <Border Grid.Column="2" Width="300" Height="320"  Visibility="Visible" Margin="-5 -1 0 0" Panel.ZIndex="2">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Cyan" BlurRadius="25" ShadowDepth="1" Opacity="1"/>
+                    </Border.Effect>
+                    <Border Grid.Column="2" Width="300" Height="320" BorderThickness="0" Visibility="Visible" Margin="-10 -1 0 0" Panel.ZIndex="2">
+                        <Border.Background>
+                            <SolidColorBrush Opacity="1" Color="#FF090A1D"/>
+                        </Border.Background>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Foreground="white" Text="رمزتو فراموش کردی؟" FontSize="24" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,10,0,20"/>
+
+                            <Label Grid.Row="1" Width="200" Height="30" Margin="100 0 10 25" Content="یک راه انتخاب کن" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold"/>
+                            <CheckBox x:Name="NumberMethod" Click="NumberMethod_Click" Grid.Row="1" Margin="40 30 0 0"  Foreground="White">
+                                <TextBlock Text="شماره " VerticalAlignment="Center" Margin="-2 2 0 0"/>
+                            </CheckBox>
+                            <CheckBox  x:Name="EmailMethod" Click="EmailMethod_Click"  Grid.Row="1" Margin="230 30 0 0"  Foreground="White" Panel.ZIndex="2">
+                                <TextBlock Text="ایمیل" VerticalAlignment="Center" Margin="-55 2 0 0"/>
+                            </CheckBox>
+                            <StackPanel x:Name="NumberPanel" Grid.Row="2" Visibility="Collapsed">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="1" Width="200" Height="30" Margin="0 10 10 25" Content="شماره وارد کن" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Image Source="/Icons/telephone-call.png" Grid.Column="0" Width="20" Height="20" Margin="-250 15 0 0" />
+
+                                    <TextBox Grid.Row="2" Width="200" Height="30" Margin="0,20,0,0"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Background="Transparent" BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 15 0 0" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel x:Name="EmailPanel" Grid.Row="2" Visibility="Visible">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="1" Width="200" Height="30" Margin="0 10 10 25" Content="ایمیل وارد کن" Foreground="white"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Image Grid.Column="0" Width="20" Height="20" Source="/Icons/email.png" Margin="-250 15 0 0" />
+
+                                    <TextBox Grid.Row="1" Width="200" Height="30" Margin="0,20,0,0"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Background="Transparent" BorderBrush="White" BorderThickness="0 0 0 1" Padding="0 15 0 0" Foreground="White" FontFamily="Arial Rounded MT Bold"/>
+                                </Grid>
+
+                            </StackPanel>
+
+                            <Button x:Name="SendCodeBtn"  Grid.Row="3" Content="دریافت کد" Foreground="Black" Width="100" Height="30"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,-10"
+                     >
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF00BEC6" Offset="0"/>
+                                        <GradientStop Color="#FF26EDA1" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="border" Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="15">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="LoginInForgotPage" Click="LoginInForgotPage_Click"  Grid.Row="3" Content="ورود" Foreground="Black" Width="100" Height="30" Background="white"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,-20">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border  x:Name="border" Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="15">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="DarkGray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                        </Grid>
+                    </Border>
+                </Border>
+            </Border>
+        </Grid>
+        <Grid Grid.Column="2" Margin="5 0 0 0">
+            <StackPanel x:Name="DevModePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+
+                <!-- استاد -->
+                <Button x:Name="SkipAsTeacher" Content="استاد" Click="SkipAsTeacher_Click"  Margin="0,0,0,10" Width="120" Height="40"
+        Background="#FF00BEC6" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- ادمین -->
+                <Button x:Name="SkipAsAdmin" Content="ادمین" Click="SkipAsAdmin_Click"  Margin="0,0,0,10" Width="120" Height="40"
+        Background="#FF26EDA1" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- دانشجو -->
+                <Button x:Name="SkipAsStudent" Content="دانشجو" Click="SkipAsStudent_Click" Margin="0" Width="120" Height="40"
+        Background="#FF7A4DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

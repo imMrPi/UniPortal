@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="UniPortal.Admins.UserControlsMenu.DrawingCircleForGeneralCourse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniPortal.Admins.UserControlsMenu"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100"
+             AllowDrop="True"
+             MouseLeftButtonDown="UserControl_MouseLeftButtonDown"
+             Tag="">
+
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Delete" Click="MenuItem_Delete_Click"/>
+        </ContextMenu>
+    </UserControl.ContextMenu>
+
+    <Canvas>
+        <Border Canvas.Left="15" Canvas.Top="15" x:Name="circleGeneralCourse" Width="75" Height="75" Panel.ZIndex="1" CornerRadius="45" HorizontalAlignment="Stretch" BorderThickness="1" Visibility="Visible">
+            <Border.Effect>
+                <DropShadowEffect Color="#FFFFAE00" BlurRadius="25" ShadowDepth="1" Opacity="1"/>
+            </Border.Effect>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFEEC13D" Offset="0"/>
+                    <GradientStop Color="#FFFB315E" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Canvas Panel.ZIndex="4">
+                    <ContentControl Canvas.Left="50" Canvas.Right="10" x:Name="ToolTip" Panel.ZIndex="4" Visibility="Collapsed"/>
+                </Canvas>
+            </Grid>
+        </Border>
+
+        <TextBox TextChanged="CourseName_TextChanged" Canvas.Left="12" Canvas.Top="40" Width="80" x:Name="CourseName"  BorderThickness="0" FontSize="11" Foreground="White" Background="Transparent" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Panel.ZIndex="3"/>
+        <Border  Canvas.Left="15" Canvas.Top="15" x:Name="Selected" Width="75" Height="75" Panel.ZIndex="1" CornerRadius="45" HorizontalAlignment="Stretch" BorderThickness="1" Visibility="Hidden" Opacity="1">
+            <Border.Effect>
+                <DropShadowEffect Color="#FF2D312F" BlurRadius="25" ShadowDepth="1" Opacity="1"/>
+            </Border.Effect>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF323E39" Offset="0"/>
+                    <GradientStop Color="#FF373F40" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock Text="Selected" Margin="0 40 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Border>
+        <Border  Canvas.Left="15" Canvas.Top="15" Width="75" Height="75" Panel.ZIndex="3" CornerRadius="45" HorizontalAlignment="Stretch" BorderThickness="1" Visibility="Hidden" Opacity="1">
+            <Border.Effect>
+                <DropShadowEffect Color="#FF2D312F" BlurRadius="25" ShadowDepth="1" Opacity="1"/>
+            </Border.Effect>
+            <Image Source="/Icons/TickRect.png" Width="50" Height="30"/>
+
+        </Border>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,131 @@
+﻿<Window x:Class="UniPortal.Student.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniPortal.Student"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Border >
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="FirstClass"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="گروه ارائه:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="عملی:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.ColumnSpan="4"  Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="محل تشکیل کلاس:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="دوشنبه:( 8:0 تا 9:30 ) ، كلاس:( نامشخص ) ، استاد:( زماني- ساراالسادات )" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="جنسیت:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="مشترک" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="مقطع درس:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="كارشناسي پيوسته" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.ColumnSpan="4" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="پيشنياز و همنياز:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text=" پيش نياز(ريزپردازنده و زبان اسمبلي - 11224)" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="ظرفيت:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="8" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel> 
+                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="تاريخ امتحان:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="رشته يا نيمسال ورود:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="مهندسي كامپيوتر" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="دوره درس:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="كليه دوره ها" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="باقيمانده:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="6" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="ساعت امتحان:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="دانشكده:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="فناوري هاي صنعتي" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="نوع درس:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="اصلي" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="نظري:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="گروه آموزشي:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="مهندسي فناوري اطلاعات" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" FlowDirection="RightToLeft" >
+                    <Border BorderBrush="white" BorderThickness="0 0 0 0" Background="Black" CornerRadius="1" Width="2" Height="16" VerticalAlignment="Center" Margin="0 0 -3 0" />
+                    <Label VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Content="نوع ارائه درس:" FontFamily="B Nazanin" FontSize="15"/>
+                    <TextBlock   Text="عادي" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="B Nazanin" FontSize="15"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+
+    </Border>
+</Window>
